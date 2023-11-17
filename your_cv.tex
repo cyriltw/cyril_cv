@@ -1,0 +1,154 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2015 Xavier Danaux (xdanaux@gmail.com), 2020-2022 moderncv maintainers (github.com/moderncv).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+\documentclass[11pt,letterpaper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% moderncv themes
+\moderncvstyle{banking}                             % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
+\moderncvcolor{black}                               % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+% \nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% adjust the page margins
+% \usepackage[scale=0.90]{geometry}
+\usepackage[scale=0.9,top=2cm,bottom=2cm]{geometry}
+\usepackage{lastpage}
+\fancyfoot{}
+\fancyfoot[LE,RO]{\thepage/\pageref{LastPage}}
+\fancyfoot[RE,LO]{\color{color2} Cyril Weerasooriya | www.cyrilw.com | thacyrweer@gmail.com} 
+% \fancyfoot[l]{\parbox[b]{.8\textwidth}{\color{color2}\addressfont\itshape Cyril Weerasooriya | www.cyrilw.com | thacyrweer@gmail.com}}
+\recomputelengths
+
+% \usepackage{moderntimeline}
+% % Set the scale.
+% % I go up to 2013 otherwise some late dates overflow on the entry
+% \tlmaxdates{2015}{2022}
+% % Set the line width.
+% % This automatically sets the space under the top label to be 1pt more
+% \tlwidth{0.8ex}
+% % Set the labels text size
+% \tltext{\tiny}
+
+% \setlength{\footskip}{149.60005pt}                 % depending on the amount of information in the footer, you need to change this value. comment this line out and set it to the size given in the warning
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+% \setlength{\makecvheadnamewidth}{10cm}            % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+% font loading
+% for luatex and xetex, do not use inputenc and fontenc
+% see https://tex.stackexchange.com/a/496643
+\ifxetexorluatex
+  \usepackage{fontspec}
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX}
+  \setmainfont{Latin Modern Roman}
+  \setsansfont{Latin Modern Sans}
+  \setmonofont{Latin Modern Mono}
+  \setmathfont{Latin Modern Math} 
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage{lmodern}
+\fi
+
+% document language
+\usepackage[english]{babel}  % FIXME: using spanish breaks moderncv
+\def\jobdesc{1}
+% personal data
+\name{Tharindu Cyril}{Weerasooriya}
+% \title{Ph.D. Candidate}                               % optional, remove / comment the line if not wanted
+% \born{4 July 1776}                                 % optional, remove / comment the line if not wanted
+% \address{street and number}{postcode city}{country}% optional, remove / comment the line if not wanted; the "postcode city" and "country" arguments can be omitted or provided empty
+\phone[mobile]{+1~(123)~456~7890}                   % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
+% \phone[fixed]{+2~(345)~678~901}
+% \phone[fax]{+3~(456)~789~012}
+\email{thacyrweer@gmail.com}                               % optional, remove / comment the line if not wanted
+\homepage{cyrilw.com}                         % optional, remove / comment the line if not wanted
+
+% Social icons
+\social[linkedin]{cyrilw}                        % optional, remove / comment the line if not wanted
+% \social[xing]{john\_doe}                           % optional, remove / comment the line if not wanted
+
+\social[github]{cyriltw}                              % optional, remove / comment the line if not                           % optional, remove / comment the line if not wanted
+% \social[orcid]{0000-0003-4647-3164}                  % optional, remove / comment the line if not wanted
+
+\social[googlescholar]{P6zvClgAAAAJ}            % optional, remove / comment the line if not wanted
+% optional, remove / comment the line if not wanted
+% optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+% \quote{Some quote}  % optional, remove / comment the line if not wanted
+
+% bibliography adjustments (only useful if you make citations in your resume, or print a list of publications using BibTeX)
+%   to show numerical labels in the bibliography (default is to show no labels)
+% \makeatletter\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}\makeatother
+
+%   to redefine the bibliography heading string ("Publications")
+% \renewcommand{\refname}{Articles}
+
+% bibliography with mutiple entries
+% \renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}
+% \usepackage{multibib}
+% \newcites{misc}{Journal Submissions}
+% \newcites{book}{Conference Submissions}
+
+\usepackage[backend=biber, sorting=ydnt, maxbibnames=99,doi=false, isbn=false,url=false]{biblatex}
+\addbibresource{pubs.bib}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+\vspace*{-10mm}
+\makecvtitle
+\vspace*{-10mm}
+
+\section{Research Highlights}
+\subsection{Fairness in Human Annotation and Disagreement Prediction}
+\cvitem{}{Building a representative human-annotated training datasets using machine learning for subjective classification tasks on social media (political content, offensive language, and hate speech).}
+\cvitem{Collaborators}{Dr. Christopher M. Homan (advisor), Dr. Alexander G. Orobia, Dr. Ashique KhudaBukhsh, Dr. Sarah Luger, and Dr. Marcos Zampieri.}
+\cvitem{Publications}{EMNLP 2023 \cite{noiseaudit2023}, ACL 2023 \cite{acl2023_crowdopinion,acl2023_disco}, ECAI 2020 \cite{weerasooriyaNeighborhoodbasedPoolingPopulationlevel2020}, and NLPerspectivist @ LREC 2022 \cite{weerasooriyaImprovingLabelQuality2022,homanAnnotatorResponseDistributions2022}}
+\cvitem{Data}{Subjective social media content ($\sim50,000+$ items) from Reddit, Twitter, and Facebook.}
+\cvitem{Interests}{Machine learning, Label distribution learning, Deep learning, Data science, Statistics, Probabilistic learning, Human computation, Crowdsourcing, Information retrieval, Natural language processing, Large Language Models, Sociolinguistics, and Computational Social Sciences.}
+
+\section{Education}
+\cventry{2018--2024}{Ph.D. in Computer Science}{Rochester Institute of Technology}{Rochester, NY}{\textit{GPA 3.9}}{Machine Learning, Natural Language Processing, Fairness in AI, Data Science, and Computational Social Science.}  % arguments 3 to 6 can be left empty
+\cvitem{Thesis}{Fairness in Human Annotation. \textbf{Advisor:} Dr. Christopher M. Homan}
+
+\cventry{2013--2017}{B.Sc. in Computer Science}{University of Kelaniya}{Sri Lanka}{}{}
+\cvitem{Thesis}{KeyXtract Twitter Model - An Essential Keywords Extraction Model for Twitter. \textbf{Advisor:} Dr. Sidath Liyanage}
+
+
+\input{work_experience}
+
+\section{Skills}
+\cvdoubleitem{Data Science}{Tableau, Jupyter Notebooks (Colab), SQL (Presto) and Excel}{ML/NLP}{PyTorch, Keras, TensorFlow, SpaCy, NLTK, HuggingFace (BERT) and sklearn}
+\cvdoubleitem{Programming}{Python, R, Java, C, and PHP}{Crowdsource}{Qualtrics and Amazon Mechanical Turk}
+\cvdoubleitem{Infrastructure}{Google Cloud, AWS, and DigitalOcean}{Design}{Photoshop, Illustrator, and Lightroom}
+
+
+\nocite{*}
+\printbibliography[title=Pre-Print, type=unpublished]
+
+\printbibliography[title=Conference Presentations, type=inproceedings]
+
+\printbibliography[title=Journal Papers, type=article]
+
+\input{service}
+
+\input{talks}
+\section{Awards}
+\cvitemwithcomment{2021}{AWS Startup credit for LKEMR (\$1000)}{AWS}
+\cvitemwithcomment{2020}{Google Cloud Research Credit (\$1000)}{Google}
+\cvitemwithcomment{2020}{Crowdfunding Campaign for DSA (raised \$1000)}{Crowdfunded}
+
+\section{Certificates}
+\cvitemwithcomment{2018,2023}{Social and Behavioural Research Certificate}{Citi Program}
+\cvitemwithcomment{2017}{Competent Gavelier Leader}{Toastmasters International USA}
+\cvitemwithcomment{2017}{Competent Gavelier Communicator}{Toastmasters International USA}
+
+\clearpage
+% \include{letter.tex}
+\end{document}
